@@ -1,0 +1,164 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: "Segoe UI", sans-serif;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3, #ffc3d1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 15px;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 720px;
+    position: relative;
+    z-index: 2;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.96);
+    padding: 45px;
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.22);
+    animation: appear 1.2s ease;
+}
+
+.big-heart {
+    font-size: 70px;
+    animation: heartbeat 1.2s infinite;
+}
+
+h1 {
+    color: #e63963;
+    font-size: 44px;
+    margin: 12px 0;
+}
+
+.subtitle {
+    color: #777;
+    font-size: 19px;
+    margin-bottom: 30px;
+}
+
+.letter {
+    text-align: left;
+    color: #444;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+.letter p {
+    margin-bottom: 18px;
+}
+
+.letter h2 {
+    text-align: center;
+    color: #e63963;
+    margin: 28px 0;
+}
+
+.promise {
+    background: #fff0f4;
+    padding: 18px;
+    border-radius: 15px;
+    border-left: 5px solid #e63963;
+}
+
+.love {
+    text-align: center;
+    color: #e63963;
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.signature {
+    text-align: right;
+    margin-top: 30px;
+}
+
+button {
+    margin-top: 25px;
+    border: none;
+    background: #e63963;
+    color: white;
+    padding: 16px 28px;
+    border-radius: 35px;
+    font-size: 17px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 8px 25px rgba(230, 57, 99, 0.35);
+}
+
+button:hover {
+    transform: scale(1.08);
+    background: #c92d52;
+}
+
+#secretMessage {
+    display: none;
+    margin-top: 30px;
+    padding: 25px;
+    background: #fff0f4;
+    border-radius: 20px;
+    color: #d6335c;
+    line-height: 1.7;
+    animation: appear 0.7s ease;
+}
+
+#secretMessage h2 {
+    margin-bottom: 15px;
+}
+
+.final-heart {
+    font-size: 50px;
+    margin: 15px;
+    animation: heartbeat 1s infinite;
+}
+
+.hearts span {
+    position: fixed;
+    bottom: -60px;
+    font-size: 25px;
+    opacity: 0;
+    animation: float 8s linear infinite;
+}
+
+.hearts span:nth-child(1) { left: 8%; animation-delay: 0s; }
+.hearts span:nth-child(2) { left: 20%; animation-delay: 2s; }
+.hearts span:nth-child(3) { left: 35%; animation-delay: 4s; }
+.hearts span:nth-child(4) { left: 50%; animation-delay: 1s; }
+.hearts span:nth-child(5) { left: 65%; animation-delay: 3s; }
+.hearts span:nth-child(6) { left: 80%; animation-delay: 5s; }
+.hearts span:nth-child(7) { left: 92%; animation-delay: 2.5s; }
+
+@keyframes float {
+    0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+    20% { opacity: 0.8; }
+    100% { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.18); }
+}
+
+@keyframes appear {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 600px) {
+    .card { padding: 30px 20px; }
+    h1 { font-size: 32px; }
+    .big-heart { font-size: 55px; }
+    .letter { font-size: 15px; }
+    button { width: 100%; }
+}
